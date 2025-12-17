@@ -3,7 +3,13 @@
 """
 
 import sys
+import os
 from pathlib import Path
+
+# Если запускается из scripts/, переходим в корень проекта
+if Path.cwd().name == 'scripts':
+    os.chdir('..')
+
 
 def test_imports():
     """Проверяет импорт всех необходимых библиотек"""
@@ -95,13 +101,18 @@ def test_project_structure():
         'utils',
         'data',
         'outputs',
+        'scripts',
+        'docs',
     ]
     
     required_files = [
         'README.md',
         'requirements.txt',
-        'setup_env.sh',
-        'run_on_server.sh',
+        'scripts/setup_env.sh',
+        'scripts/run_on_server.sh',
+        'scripts/run_and_save_logs.sh',
+        'docs/SETUP.md',
+        'docs/FOR_TEACHER.md',
         'hw1/task01_decoder.py',
         'hw2/variant_a/stabilization.py',
         'hw2/variant_b/vos_system.py',

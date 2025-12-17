@@ -1,0 +1,21 @@
+=== Real-time Video Pipeline Report ===
+
+Video source: data/test.mp4
+Device: cuda
+Duration: 10.14 s
+
+Configuration:
+  Clip length: 16
+  Frame queue size: 32
+  Clip queue size: 4
+
+Performance Metrics:
+  avg_latency: 7.33 ms
+  p95_latency: 6.67 ms
+  p99_latency: 109.33 ms
+  jitter: 22.50 ms
+  min_latency: 2.53 ms
+  max_latency: 202.33 ms
+
+  Throughput: 9.47 clips/s
+  Total clips: 96

@@ -12,20 +12,20 @@ ENV/
 dist/
 build/
 
-# Data files
+# Data files (большие видео файлы не загружаем)
 data/*
 !data/.gitkeep
+!data/README.md
 
-# Output files
-outputs/*
-!outputs/.gitkeep
+# Output files - ЗАГРУЖАЕМ в Git для демонстрации результатов
+# outputs/ теперь в Git!
 
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
 
-# Logs
-logs/
+# Logs - сохраняем выводы терминала
+# logs/ теперь в Git!
 *.log
 
 # IDE

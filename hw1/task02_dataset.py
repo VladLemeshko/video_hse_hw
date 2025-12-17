@@ -63,6 +63,9 @@ class VideoDataset(Dataset):
             for frame in frames:
                 # Конвертируем в tensor
                 frame_tensor = torch.from_numpy(frame).permute(2, 0, 1)  # (H, W, C) -> (C, H, W)
+                # Конвертируем в float если еще uint8
+                if frame_tensor.dtype == torch.uint8:
+                    frame_tensor = frame_tensor.float() / 255.0
                 frame_tensor = self.transform(frame_tensor)
                 transformed_frames.append(frame_tensor)
             

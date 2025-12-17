@@ -1,4 +1,6 @@
-# Инструкция по запуску на сервере
+# Инструкция по установке и запуску
+
+> 📖 Основная документация: [README.md](../README.md)
 
 ## Подключение к серверу
 
@@ -21,7 +23,7 @@ cd video
 
 ```bash
 # Автоматическая установка
-bash setup_env.sh
+bash scripts/setup_env.sh
 
 # Или вручную
 python3 -m venv venv_video
@@ -34,7 +36,7 @@ pip install -r requirements.txt
 
 ```bash
 source venv_video/bin/activate
-python test_setup.py
+python scripts/test_setup.py
 ```
 
 Должно показать:
@@ -72,23 +74,35 @@ python3 -c "import urllib.request; urllib.request.urlretrieve('http://commondata
 
 ```bash
 # Автоматический скрипт
-bash trim_video.sh data/long_video.mp4 data/test.mp4 30
+bash scripts/trim_video.sh data/long_video.mp4 data/test.mp4 30
 
 # Вручную через ffmpeg
 ffmpeg -i data/long_video.mp4 -t 30 -c copy data/test.mp4
 
 # Обрезать текущее test.mp4 до 30 сек
-bash trim_video.sh data/test.mp4 data/test_short.mp4 30
+bash scripts/trim_video.sh data/test.mp4 data/test_short.mp4 30
 mv data/test_short.mp4 data/test.mp4
 ```
 
 ## Запуск заданий
 
-### Быстрый запуск всех заданий
+### Быстрый запуск с сохранением логов (рекомендуется)
 
 ```bash
 source venv_video/bin/activate
-bash run_on_server.sh
+bash scripts/run_and_save_logs.sh
+```
+
+Этот скрипт:
+- Запускает все задания
+- Сохраняет полный вывод консоли в `logs/`
+- Создает итоговый отчет `logs/RESULTS_SUMMARY.md`
+- Все результаты будут в `outputs/` и `logs/`
+
+### Обычный запуск (без логов)
+
+```bash
+bash scripts/run_on_server.sh
 ```
 
 Скрипт интерактивно предложит выбрать задания.

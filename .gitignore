@@ -24,9 +24,8 @@ data/*
 .ipynb_checkpoints/
 *.ipynb
 
-# Logs - сохраняем выводы терминала
-# logs/ теперь в Git!
-*.log
+# Logs - все логи теперь в Git для демонстрации
+# Ничего не игнорируется из logs/
 
 # IDE
 .vscode/

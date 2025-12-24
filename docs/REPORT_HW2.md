@@ -122,6 +122,8 @@ change(t) = (1/HW) * ||M(t) - M(t+1)||₁
 
 Результаты сохранены в `outputs/hw2/variant_a/window/`
 
+![IoU Comparison - Window](../outputs/hw2/variant_a/window/iou_comparison.png)
+
 **iou_comparison.png**: График показывает temporal IoU между соседними кадрами до и после сглаживания. 
 
 Наблюдения:
@@ -129,12 +131,16 @@ change(t) = (1/HW) * ||M(t) - M(t+1)||₁
 - После сглаживания: IoU стабилизируется в диапазоне 0.92-0.95
 - Стандартное отклонение IoU снижается с 0.08 до 0.03
 
+![Masks Comparison - Window](../outputs/hw2/variant_a/window/masks_comparison.png)
+
 **masks_comparison.png**: Визуальное сравнение оригинальных и сглаженных масок на 4 репрезентативных кадрах (0, 10, 20, 30).
 
 Наблюдения:
 - Оригинальные маски имеют "рваные" края
 - Сглаженные маски демонстрируют более плавные границы
 - В областях с быстрым движением возможно размытие деталей
+
+![Stability Maps - Window](../outputs/hw2/variant_a/window/stability_maps.png)
 
 **stability_maps.png**: Карты нестабильности показывают области, где маски чаще всего изменяются.
 
@@ -159,6 +165,8 @@ Std IoU                     0.0823      0.0287
 
 Результаты сохранены в `outputs/hw2/variant_a/motion/`
 
+![IoU Comparison - Motion](../outputs/hw2/variant_a/motion/iou_comparison.png)
+
 **iou_comparison.png**: Сравнение temporal IoU для motion-aware подхода.
 
 Наблюдения:
@@ -166,7 +174,11 @@ Std IoU                     0.0823      0.0287
 - Motion-aware сглаживание дает IoU 0.93-0.96
 - В областях с большим движением метод лучше сохраняет детали
 
+![Masks Comparison - Motion](../outputs/hw2/variant_a/motion/masks_comparison.png)
+
 **masks_comparison.png**: Визуальное сравнение показывает, что motion-aware метод лучше сохраняет резкие границы при быстром движении.
+
+![Stability Maps - Motion](../outputs/hw2/variant_a/motion/stability_maps.png)
 
 **stability_maps.png**: Карты нестабильности демонстрируют более локализованное улучшение в областях с движением.
 
@@ -313,6 +325,8 @@ shift(t) = ||c(t) - c(t+1)||₂
 
 #### 2.3.1 Начальная маска
 
+![Initial Mask](../outputs/hw2/variant_b/initial_mask.png)
+
 **initial_mask.png**: Визуализация начальной маски, полученной GrabCut.
 
 Наблюдения:
@@ -321,6 +335,8 @@ shift(t) = ||c(t) - c(t+1)||₂
 - Площадь маски: 45678 пикселей (примерно 15% кадра)
 
 #### 2.3.2 Сравнение всех методов
+
+![Comparison All Methods](../outputs/hw2/variant_b/comparison_all_methods.png)
 
 **comparison_all_methods.png**: Сравнение 4 методов на ключевых кадрах (0, 7, 15, 22, 29).
 
@@ -354,6 +370,8 @@ shift(t) = ||c(t) - c(t+1)||₂
 - Кадр 29: хорошее соответствие с плавными границами
 
 #### 2.3.3 Анализ ошибок Forward метода
+
+![Error Analysis Forward](../outputs/hw2/variant_b/error_analysis_Forward.png)
 
 **error_analysis_Forward.png**: 4 графика, показывающие деградацию метода во времени.
 
@@ -390,6 +408,8 @@ shift(t) = ||c(t) - c(t+1)||₂
 
 #### 2.3.4 Анализ ошибок Bidirectional метода
 
+![Error Analysis Bidirectional](../outputs/hw2/variant_b/error_analysis_Bidirectional.png)
+
 **error_analysis_Bidirectional.png**: Сравнение с Forward показывает улучшение.
 
 **График 1: Изменение площади маски**
@@ -415,6 +435,8 @@ shift(t) = ||c(t) - c(t+1)||₂
 - Среднее смещение: 9.2 пикселей (-20% относительно Forward)
 
 #### 2.3.5 Анализ ошибок Full Pipeline метода
+
+![Error Analysis Full Pipeline](../outputs/hw2/variant_b/error_analysis_Full_Pipeline.png)
 
 **error_analysis_Full_Pipeline.png**: Наилучшие результаты из всех методов.
 

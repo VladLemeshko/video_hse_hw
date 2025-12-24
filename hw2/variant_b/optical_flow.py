@@ -223,3 +223,4 @@ def detect_occlusions(flow_forward: np.ndarray, flow_backward: np.ndarray,
     
     return occlusions
 
+

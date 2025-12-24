@@ -18,3 +18,4 @@ wget http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerB
 Видео файлы не добавляются в Git из-за большого размера.  
 Загрузите их локально перед запуском заданий.
 
+

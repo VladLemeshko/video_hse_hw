@@ -75,3 +75,4 @@ bash setup_env.sh
 3. **Данные:** `bash scripts/download_test_video.sh`
 4. **Запуск:** `bash scripts/run_and_save_logs.sh`
 
+
